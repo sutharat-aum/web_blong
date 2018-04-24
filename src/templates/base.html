@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/main.css')}}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/font-awesome.min.css')}}"/>
+
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.3.1.min.js') }}"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/search.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/overview.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/help.js') }}"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <!--<script type="text/javascript" src="{{ url_for('static', filename='js/piechart.js') }}"></script>-->
+
+</head>
+
+
+<body>
+<div class="col-md-12">
+  <div class="col-md-12">
+    {% block content%}
+
+    {% endblock %}
+  </div>
+  <div class="panel-footer position-footer">
+      <div class="text-center">
+        <p>© 2017-2018 Jantra.kam,Aumfak.sut and Phungtuaeng.tha</p>
+          <p>Rajamangala University of Technology Tawan-Ok:Chakrabongse Bhuvanarth Campus</p>
+    </div></div>
+</div>
+</body>
+
+<script>
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart1);
+
+
+function drawChart1() {
+
+        var data1 = google.visualization.arrayToDataTable([
+          ['Emotions', 'Results'],
+          ['Happiness',    {{ pieHappy }}],
+          ['Sadness',      {{ pieSad }}],
+          ['Love',         {{ pieLove }}],
+          ['Hate',         {{ pieHate }}],
+          ['Fun',          {{ pieFun }}],
+          ['Worry',        {{ pieWorry }}]
+
+
+        ]);
+
+        var options1 = {
+          title: 'My Daily Activities1',
+          pieHole: 0.5,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart1'));
+        chart.draw(data1, options1);
+      }
+</script>
+
+
+</html>

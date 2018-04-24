@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content%}
+    <form>
+      <div class="container"> 
+      <div class="col-md-12 text-center">
+        <h1>Predicting Emotions Web Application Based On Twitter</h1>
+      </div>
+      <div class="col-md-6 col-md-offset-3 dis-flex">
+        <input type="text" name="textsearch" class="form-control" id="text" >
+      </div>
+          <div class=" col-md-6 col-md-offset-3 text-center margin-top"  >
+              <button type="button" class="btn btn-primary " onclick="search()" >Search</button>
+              <button type="button" class="btn btn-primary " onclick="overview()" >Overview</button>
+         </div>
+    </div>
+        <div class=" col-md-6 col-md-offset-3 text-center margin-top"  >
+    <div id="donutchart1" style="width: 900px; height: 500px;"></div>
+        </div>
+
+
+    </form>
+{% endblock %}

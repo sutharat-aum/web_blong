@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% block content%}
+    <form id="search-form">
+        <div class="container">
+   		    <div class="col-md-12 text-center margin-top">
+   			    <h1>Predicting Emotions Web Application Based On Twitter</h1>
+   		    </div>
+   		        <div class="col-md-6 col-md-offset-3 dis-flex margin-ber">
+   			<input type="text" name="textsearch" class="form-control" id="text">
+   		    </div>
+            <div class=" col-md-6 col-md-offset-3 text-center margin-bt-search"  >
+				 <button type="button" class="btn btn-primary " onclick="search()" >Search</button>
+              <button type="button" class="btn btn-primary " onclick="overview()" >Overview</button>
+            </div>
+        </div>
+        <div class="jumbotron">
+  		<div class="container ">
+   			 <div class=" col-md-6  "  >
+           		<div class="panel panel-primary box-tc-related dis-block" >
+                 	<div class="panel-heading">Happiness
+                 	</div>
+                    	<div class="panel-body scrollbar">
+
+							{% for tweet in emoHappy %}
+                        	<div id="tc-Happiness" class="tc jqcloud margin-box" >
+								{{ tweet }}
+                        	</div>
+							{% endfor %}
+                    	</div>
+     			</div>
+    		</div>
+    		 <div class=" col-md-6  "  >
+           		<div class="panel panel-primary box-tc-related dis-block" >
+                 	<div class="panel-heading">Sadness
+                 	</div>
+                    	<div class="panel-body scrollbar">
+							{% for tweet in emoSad %}
+                        	<div id="tc-Sadness" class="tc jqcloud margin-box" >
+								{{ tweet }}
+                        	</div>
+							{% endfor %}
+                    	</div>
+     			</div>
+    		</div>
+
+  		</div>
+  		<div class="container ">
+   			 <div class=" col-md-6  "  >
+           		<div class="panel panel-primary box-tc-related dis-block" >
+                 	<div class="panel-heading">Love
+                 	</div>
+                    	<div class="panel-body scrollbar" >
+							{% for tweet in emoLove %}
+                        	<div id="tc-Love" class="tc jqcloud margin-box" >
+								{{ tweet }}
+                        	</div>
+							{% endfor %}
+                    	</div>
+     			</div>
+    		</div>
+    		 <div class=" col-md-6  "  >
+           		<div class="panel panel-primary box-tc-related dis-block" >
+                 	<div class="panel-heading">Hate
+                 	</div>
+                    	<div class="panel-body scrollbar">
+							{% for tweet in emoHate %}
+                        	<div id="tc-Hate" class="tc jqcloud margin-box" >
+								{{ tweet }}
+                        	</div>
+							{% endfor %}
+                    	</div>
+     			</div>
+    		</div>
+  		</div>
+  		<div class="container ">
+   			 <div class=" col-md-6  "  >
+           		<div class="panel panel-primary box-tc-related dis-block" >
+                 	<div class="panel-heading">Fun
+                 	</div>
+                    	<div class="panel-body scrollbar">
+							{% for tweet in emoFun %}
+                        	<div id="tc-Fun" class="tc jqcloud margin-box" >
+								{{ tweet }}
+                        	</div>
+							{% endfor %}
+                    	</div>
+     			</div>
+    		</div>
+    		 <div class=" col-md-6  "  >
+           		<div class="panel panel-primary box-tc-related dis-block" >
+                 	<div class="panel-heading ">Worry
+                 	</div>
+                    	<div class="panel-body scrollbar">
+							{% for tweet in emoWorry %}
+                        	<div id="tc-Worry" class="tc jqcloud margin-box" >
+								{{ tweet }}
+                        	</div>
+							{% endfor %}
+                    	</div>
+     			</div>
+    		</div>
+  		</div>
+	</div>
+    </form>
+{% endblock %}
+
+

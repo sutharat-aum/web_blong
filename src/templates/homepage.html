@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content%}
+    <form>
+      <div class="container margin-top">
+      <div class="col-md-12 text-center ">
+        <h1>Predicting Emotions Web Application Based On Twitter</h1>
+      </div>
+      <div class="col-md-6 col-md-offset-3 dis-flex margin-ber">
+        <input type="text" name="textsearch" class="form-control" id="search" required >
+                <!-- Button trigger modal -->
+        <button type="button" class="btn btn-danger margin-bt" data-toggle="modal" data-target="#exampleModal" id="btnHelp"  >
+            Help
+        </button>
+      </div>
+          <div class=" col-md-6 col-md-offset-3 text-center "  >
+              <button type="button" class="btn btn-primary " onclick="searchHome()" >Search</button>
+              <button type="button" class="btn btn-primary " onclick="overviewHome()" >Overview</button>
+         </div>
+
+    </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Help</h5>
+        <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close" >-->
+          <!--<span aria-hidden="true">&times;</span>-->
+        <!--</button>-->
+      </div>
+      <div class="modal-body">
+        <span>English Language</span><br>
+          <span>Search for user (@ prefix search words)</span><br>
+          <span>Search for user (@ prefix search words)</span><br>
+          <span>Example : #hashtags , @user</span>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </form>
+
+{% endblock %}

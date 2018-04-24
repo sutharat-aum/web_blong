@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block content%}
+    <form id="search-form">
+        <div class="container">
+   		    <div class="col-md-12 text-center">
+   			    <h1>Predicting Emotions Web Application Based On Twitter</h1>
+   		    </div>
+   		        <div class="col-md-6 col-md-offset-3 dis-flex">
+   			<input type="text" name="textsearch" class="form-control" id="text">
+   		    </div>
+            <div class=" col-md-6 col-md-offset-3 text-center margin-top"  >
+                <button type="button" class="btn btn-primary " onclick="search()" >Search</button>
+              <button type="button" class="btn btn-primary " onclick="overview()" >Overview</button>
+            </div>
+        </div>
+        <h4>{{keyword}}</h4>
+        <div class="jumbotron margin-top">
+  		<div class="container ">
+   			 <div class=" col-md-6  "  >
+           		<div class="panel panel-primary box-tc-related dis-block" >
+                 	<div class="panel-heading">Happiness
+                 	</div>
+                    	<div class="panel-body">
+                        	<div id="tc-Happiness" class="tc jqcloud" style="width: 198px; height: 200px;">
+                        	</div>
+                    	</div>
+     			</div>
+    		</div>
+    		 <div class=" col-md-6  "  >
+           		<div class="panel panel-primary box-tc-related dis-block" >
+                 	<div class="panel-heading">Sadness
+                 	</div>
+                    	<div class="panel-body">
+                        	<div id="tc-Sadness" class="tc jqcloud" style="width: 198px; height: 200px;">
+                        	</div>
+                    	</div>
+     			</div>
+    		</div>
+
+  		</div>
+  		<div class="container ">
+   			 <div class=" col-md-6  "  >
+           		<div class="panel panel-primary box-tc-related dis-block" >
+                 	<div class="panel-heading">Love
+                 	</div>
+                    	<div class="panel-body">
+                        	<div id="tc-Love" class="tc jqcloud" style="width: 198px; height: 200px;">
+                        	</div>
+                    	</div>
+     			</div>
+    		</div>
+    		 <div class=" col-md-6  "  >
+           		<div class="panel panel-primary box-tc-related dis-block" >
+                 	<div class="panel-heading">Hate
+                 	</div>
+                    	<div class="panel-body">
+                        	<div id="tc-Hate" class="tc jqcloud" style="width: 198px; height: 200px;">
+                        	</div>
+                    	</div>
+     			</div>
+    		</div>
+  		</div>
+  		<div class="container ">
+   			 <div class=" col-md-6  "  >
+           		<div class="panel panel-primary box-tc-related dis-block" >
+                 	<div class="panel-heading">Fun
+                 	</div>
+                    	<div class="panel-body">
+                        	<div id="tc-Fun" class="tc jqcloud" style="width: 198px; height: 200px;">
+                        	</div>
+                    	</div>
+     			</div>
+    		</div>
+    		 <div class=" col-md-6  "  >
+           		<div class="panel panel-primary box-tc-related dis-block" >
+                 	<div class="panel-heading">Worry
+                 	</div>
+                    	<div class="panel-body">
+                        	<div id="tc-Worry" class="tc jqcloud" style="width: 198px; height: 200px;">
+                        	</div>
+                    	</div>
+     			</div>
+    		</div>
+  		</div>
+	</div>
+    </form>
+
+{% endblock %}
